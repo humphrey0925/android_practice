@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/colorful_background"
+    tools:context="com.example.kebohan.myapplication.sign">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up_title"
+                    android:textAlignment="center"
+                    android:textSize="32sp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="519dp">
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/editText11"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignStart="@+id/editText11"
+                        android:layout_marginTop="22dp"
+                        android:layout_weight="1"
+                        android:text="@string/user_name" />
+
+                    <EditText
+                        android:id="@+id/editText11"
+                        android:layout_width="331dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/textView13"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/editText11"
+                        android:layout_alignStart="@+id/editText11"
+                        android:layout_below="@+id/editText11"
+                        android:layout_marginTop="17dp"
+                        android:text="@string/user_password" />
+
+                    <EditText
+                        android:id="@+id/editText12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/editText11"
+                        android:layout_alignLeft="@+id/textView15"
+                        android:layout_alignRight="@+id/editText11"
+                        android:layout_alignStart="@+id/textView15"
+                        android:layout_below="@+id/textView15"
+                        android:layout_marginTop="17dp"
+                        android:ems="10"
+                        android:inputType="textPassword" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/editText12"
+                        android:layout_alignStart="@+id/editText12"
+                        android:layout_below="@+id/editText12"
+                        android:layout_marginTop="19dp"
+                        android:text="@string/user_password_confirm" />
+
+                    <EditText
+                        android:id="@+id/editText13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/editText12"
+                        android:layout_alignLeft="@+id/textView16"
+                        android:layout_alignRight="@+id/editText12"
+                        android:layout_alignStart="@+id/textView16"
+                        android:layout_below="@+id/textView16"
+                        android:layout_marginTop="15dp"
+                        android:ems="10"
+                        android:inputType="textPassword" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/editText13"
+                        android:layout_alignStart="@+id/editText13"
+                        android:layout_below="@+id/editText13"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/email" />
+
+                    <EditText
+                        android:id="@+id/editText14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/editText13"
+                        android:layout_alignLeft="@+id/textView17"
+                        android:layout_alignRight="@+id/editText13"
+                        android:layout_alignStart="@+id/textView17"
+                        android:layout_below="@+id/textView17"
+                        android:layout_marginTop="19dp"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/editText14"
+                        android:layout_alignStart="@+id/editText14"
+                        android:layout_below="@+id/editText14"
+                        android:layout_marginTop="18dp"
+                        android:text="@string/agree_rule"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignEnd="@+id/editText14"
+                        android:layout_alignLeft="@+id/checkBox"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignRight="@+id/editText14"
+                        android:layout_alignStart="@+id/checkBox"
+                        android:layout_below="@+id/checkBox"
+                        android:layout_marginTop="16dp"
+                        android:background="@android:color/holo_green_light"
+                        android:text="@string/sign_up" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
