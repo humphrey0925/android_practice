@@ -4,6 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.net.URLConnection;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -24,14 +29,15 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
     public ProgressDialog PDialog = null;
+    public EditText username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_login);
-
+        username = (EditText) findViewById(R.id.username);
         Button sign_in = (Button) findViewById(R.id.sign_in_button);
-        String login_url = "192.168.0.164/login_url.php";
+
         String TAG_STRING ="file path";
 
 
@@ -54,11 +60,23 @@ public class LoginActivity extends AppCompatActivity {
                 if(auth==1)
                 {
                     PDialog = ProgressDialog.show(LoginActivity.this, strDialogTitle, strDialogBody, true);
-
                     new Thread(){
                         public void run(){
                             try{
-                                sleep(5000);
+                                try {
+                                    String login_url= "192.168.0.164/login_url.php?view="+username.getText().toString();
+                                    URL url = new URL(login_url);
+                                    // 得到HttpURLConnection对象
+                                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                                    // 设置为GET方式
+                                    connection.setRequestMethod("GET");
+                                    if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                                        // 得到响应消息
+                                        String message = connection.getResponseMessage();
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             }
                             catch(Exception e){
                                 e.printStackTrace();
@@ -85,7 +103,9 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
     }
+
     public void sign_up_page()
     {
         Intent sign_up = new Intent(LoginActivity.this,sign.class);
