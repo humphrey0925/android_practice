@@ -6,14 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de288f4-db2e-4a0b-99ab-7b9cd5da43d8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/colorful_blurry_background_ii-wallpaper-1920x1080.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/kebohan/myapplication/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/kebohan/myapplication/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-    </list>
+    <list default="true" id="3de288f4-db2e-4a0b-99ab-7b9cd5da43d8" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
