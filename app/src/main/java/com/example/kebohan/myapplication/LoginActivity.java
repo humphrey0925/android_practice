@@ -1,5 +1,10 @@
 package com.example.kebohan.myapplication;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -12,6 +17,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class LoginActivity extends AppCompatActivity {
     public ProgressDialog PDialog = null;
     @Override
@@ -21,7 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         Button sign_in = (Button) findViewById(R.id.sign_in_button);
-
+        String login_url = "192.168.0.164/login_url.php";
+        String TAG_STRING ="file path";
+        new HttpAsyncTask().execute(login_url);
 
         Button login = (Button) findViewById(R.id.login_button);
         sign_in.setOnClickListener(new View.OnClickListener() {
