@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.kebohan.myapplication.LoginActivity"
-    android:background="@drawable/colorful_background">
+    android:background="@drawable/colorfulbackground">
 
     <LinearLayout
         android:layout_width="match_parent"

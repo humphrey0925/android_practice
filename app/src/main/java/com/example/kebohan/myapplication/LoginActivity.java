@@ -17,10 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         Button sign_in = (Button) findViewById(R.id.sign_in_button);
         String login_url = "192.168.0.164/login_url.php";
         String TAG_STRING ="file path";
-        new HttpAsyncTask().execute(login_url);
+
 
         Button login = (Button) findViewById(R.id.login_button);
         sign_in.setOnClickListener(new View.OnClickListener() {
