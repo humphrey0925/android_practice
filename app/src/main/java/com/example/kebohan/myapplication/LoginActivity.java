@@ -141,17 +141,15 @@ public class LoginActivity extends AppCompatActivity {
         if(s.length()!=0)
         {
             try {
-                userinfo = new JSONArray(s);
-                JSONObject userinfo_item = userinfo.getJSONObject(0);
-                Log.w("user_info_len",getString(userinfo_item.length()));
+                s=s.substring(s.indexOf("{"), s.lastIndexOf("}") + 1);
+                JSONObject json_read=new JSONObject(s);    //將資料丟進JSONObject
+//接下來選擇型態使用get並填入key取值
+                userlogin_status=json_read.getInt("status");
 
-                if(userinfo_item.getString("status")!="403")
+               // Log.w("user_info_len",getString(userlogin_status));
+
+                if(userlogin_status!=200)
                 {
-                    userlogin_status=200;
-                }
-                else
-                {
-                    userlogin_status=403;
                     pop_out_error();
                 }
 

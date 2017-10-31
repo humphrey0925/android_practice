@@ -76,8 +76,8 @@
       <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kebohan/myapplication/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="143" column="16" lean-forward="false" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="16" />
+            <state relative-caret-position="273">
+              <caret line="148" column="17" lean-forward="false" selection-start-line="148" selection-start-column="17" selection-end-line="148" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1389#1541#0" expanded="true" />
@@ -92,11 +92,11 @@
                 <element signature="e#3072#3084#0" expanded="true" />
                 <element signature="e#3699#3700#0" expanded="true" />
                 <element signature="method#pop_out_error#0;class#LoginActivity#0" expanded="false" />
-                <element signature="e#5674#5715#0" expanded="true" />
-                <element signature="e#5748#5788#0" expanded="true" />
-                <element signature="e#5864#5905#0" expanded="true" />
-                <element signature="e#5938#5978#0" expanded="true" />
-                <element signature="e#6187#6199#0" expanded="true" />
+                <element signature="e#5628#5669#0" expanded="true" />
+                <element signature="e#5702#5742#0" expanded="true" />
+                <element signature="e#5818#5859#0" expanded="true" />
+                <element signature="e#5892#5932#0" expanded="true" />
+                <element signature="e#6141#6153#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2278,7 +2278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509422049545</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2017103102&#10;更動服務器處理方式">
+      <created>1509437456680</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1509437456680</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2350,7 +2357,8 @@
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
     <MESSAGE value="我也不知道改了三小" />
     <MESSAGE value="20171031一改&#10;增加登錄功能與服務器對接" />
-    <option name="LAST_COMMIT_MESSAGE" value="20171031一改&#10;增加登錄功能與服務器對接" />
+    <MESSAGE value="2017103102&#10;更動服務器處理方式" />
+    <option name="LAST_COMMIT_MESSAGE" value="2017103102&#10;更動服務器處理方式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2397,11 +2405,11 @@
             <element signature="e#3072#3084#0" expanded="true" />
             <element signature="e#3699#3700#0" expanded="true" />
             <element signature="method#pop_out_error#0;class#LoginActivity#0" expanded="false" />
-            <element signature="e#5674#5715#0" expanded="true" />
-            <element signature="e#5748#5788#0" expanded="true" />
-            <element signature="e#5864#5905#0" expanded="true" />
-            <element signature="e#5938#5978#0" expanded="true" />
-            <element signature="e#6187#6199#0" expanded="true" />
+            <element signature="e#5628#5669#0" expanded="true" />
+            <element signature="e#5702#5742#0" expanded="true" />
+            <element signature="e#5818#5859#0" expanded="true" />
+            <element signature="e#5892#5932#0" expanded="true" />
+            <element signature="e#6141#6153#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2439,8 +2447,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/kebohan/myapplication/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="143" column="16" lean-forward="false" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="16" />
+        <state relative-caret-position="273">
+          <caret line="148" column="17" lean-forward="false" selection-start-line="148" selection-start-column="17" selection-end-line="148" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1389#1541#0" expanded="true" />
@@ -2455,11 +2463,11 @@
             <element signature="e#3072#3084#0" expanded="true" />
             <element signature="e#3699#3700#0" expanded="true" />
             <element signature="method#pop_out_error#0;class#LoginActivity#0" expanded="false" />
-            <element signature="e#5674#5715#0" expanded="true" />
-            <element signature="e#5748#5788#0" expanded="true" />
-            <element signature="e#5864#5905#0" expanded="true" />
-            <element signature="e#5938#5978#0" expanded="true" />
-            <element signature="e#6187#6199#0" expanded="true" />
+            <element signature="e#5628#5669#0" expanded="true" />
+            <element signature="e#5702#5742#0" expanded="true" />
+            <element signature="e#5818#5859#0" expanded="true" />
+            <element signature="e#5892#5932#0" expanded="true" />
+            <element signature="e#6141#6153#0" expanded="true" />
           </folding>
         </state>
       </provider>
