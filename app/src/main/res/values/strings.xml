@@ -35,4 +35,10 @@
     <string name="password_error_dialog_title">錯誤</string>
     <string name="password_error_dialog_text">您忘記輸入帳號或密碼，請重新輸入</string>
     <string name="yes">好</string>
+
+    <!--登錄狀態彈出-->
+    <string name="login_error_404_title">密碼錯誤</string>
+    <string name="login_error_404_text">您輸入的賬號或密碼有誤，請重新輸入</string>
+    <string name="login_error_403_title">對不起</string>
+    <string name="login_error_403_text">您輸入的賬號已被暫停使用，請與客服聯絡</string>
 </resources>
