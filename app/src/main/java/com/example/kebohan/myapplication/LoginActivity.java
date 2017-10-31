@@ -59,7 +59,8 @@ public class LoginActivity extends AppCompatActivity {
                     new Thread(){
                         public void run(){
                             try{
-                                new TransTask().execute("192.168.43.253/login.php?username="+username.getText().toString()+"&password="+userpassword.getText().toString());
+                                Log.i("Login:","I am here");
+                                new TransTask().execute("http://192.168.43.253/login.php?username="+username.getText().toString()+"&password="+userpassword.getText().toString());
 
                             }
                             catch(Exception e){
@@ -104,6 +105,9 @@ public class LoginActivity extends AppCompatActivity {
     class TransTask extends AsyncTask<String, Void,String>
     {
 
+
+
+
         @Override
         protected String doInBackground(String... params) {
             StringBuilder sb = new StringBuilder();
@@ -134,11 +138,13 @@ public class LoginActivity extends AppCompatActivity {
 
     }
     private void user_login_auth(String s){
-        try {
-            userinfo = new JSONArray(s);
-            JSONObject userinfo_item = userinfo.getJSONObject(0);
-            if (userinfo_item!=null)
-            {
+        if(s.length()!=0)
+        {
+            try {
+                userinfo = new JSONArray(s);
+                JSONObject userinfo_item = userinfo.getJSONObject(0);
+                Log.w("user_info_len",getString(userinfo_item.length()));
+
                 if(userinfo_item.getString("status")!="403")
                 {
                     userlogin_status=200;
@@ -146,20 +152,25 @@ public class LoginActivity extends AppCompatActivity {
                 else
                 {
                     userlogin_status=403;
+                    pop_out_error();
                 }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-            else
-            {
-                userlogin_status=404;
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
+        else
+        {
+            userlogin_status=404;
+            pop_out_error();
+        }
+
 
 
     }
     public void pop_out_error()
     {
+
         String status_title = null,status_message=null;
         switch (userlogin_status)
         {
