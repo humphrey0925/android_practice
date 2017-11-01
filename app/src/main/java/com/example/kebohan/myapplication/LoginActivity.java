@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     public ProgressDialog PDialog = null;
     public EditText username,userpassword;
     public JSONArray userinfo;
-    private int userlogin_status;
+    private int userlogin_status=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,28 +49,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
 
             public void onClick(View view) {
-                final CharSequence strDialogTitle = getString(R.string.str_dialog_title);
-                final CharSequence strDialogBody = getString(R.string.str_dialog_body);
                 int auth = login_auth();
-//顯示Progress對話視窗
                 if(auth==1)
                 {
-                    PDialog = ProgressDialog.show(LoginActivity.this, strDialogTitle, strDialogBody, true);
-                    new Thread(){
-                        public void run(){
-                            try{
-                                Log.i("Login:","I am here");
-                                new TransTask().execute("http://192.168.43.253/login.php?username="+username.getText().toString()+"&password="+userpassword.getText().toString());
+                    new TransTask().execute("http://192.168.43.253/login.php?username=" + username.getText().toString() + "&password=" + userpassword.getText().toString());
 
-                            }
-                            catch(Exception e){
-                                e.printStackTrace();
-                            }
-                            finally{
-                                PDialog.dismiss();
-                            }
-                        }
-                    }.start();
                 }
                 else
                 {
@@ -85,28 +68,24 @@ public class LoginActivity extends AppCompatActivity {
                             })
                             .show();
                 }
-                switch (userlogin_status)
-                {
-                    case 200:
-                        MainAct();
-                        break;
-                    case 403:
-
-                        break;
-                    case 404:
-                        break;
-
-                }
-
             }
         });
 
     }
     class TransTask extends AsyncTask<String, Void,String>
     {
-
-
-
+        private ProgressDialog barProgressDialog;
+        @Override
+        protected void onPreExecute() {
+            // TODO Auto-generated method stub
+            final CharSequence strDialogTitle = getString(R.string.str_dialog_title);
+            final CharSequence strDialogBody = getString(R.string.str_dialog_body);
+            barProgressDialog = new ProgressDialog(LoginActivity.this);
+            barProgressDialog.setTitle(strDialogTitle);
+            barProgressDialog.setMessage(strDialogBody);
+            barProgressDialog.show();
+            super.onPreExecute();
+        }
 
         @Override
         protected String doInBackground(String... params) {
@@ -133,24 +112,29 @@ public class LoginActivity extends AppCompatActivity {
             super.onPostExecute(s);
             Log.d("JSON", s);
             user_login_auth(s);
+            barProgressDialog.dismiss();
         }
 
 
     }
     private void user_login_auth(String s){
-        if(s.length()!=0)
+        if(s.length()>2)
         {
             try {
                 s=s.substring(s.indexOf("{"), s.lastIndexOf("}") + 1);
                 JSONObject json_read=new JSONObject(s);    //將資料丟進JSONObject
 //接下來選擇型態使用get並填入key取值
                 userlogin_status=json_read.getInt("status");
-
-               // Log.w("user_info_len",getString(userlogin_status));
+                String new_log = Integer.toString(userlogin_status);//getString(userlogin_status);
+                Log.w("user_info_len",new_log);
 
                 if(userlogin_status!=200)
                 {
                     pop_out_error();
+                }
+                else
+                {
+                    MainAct();
                 }
 
             } catch (JSONException e) {
