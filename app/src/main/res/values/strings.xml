@@ -41,4 +41,10 @@
     <string name="login_error_404_text">您輸入的賬號或密碼有誤，請重新輸入</string>
     <string name="login_error_403_title">對不起</string>
     <string name="login_error_403_text">您輸入的賬號已被暫停使用，請與客服聯絡</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

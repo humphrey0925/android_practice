@@ -5,11 +5,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Calendar;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,9 +27,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
-    public ProgressDialog PDialog = null;
-    public EditText username,userpassword;
-    public JSONArray userinfo;
+    private ProgressDialog PDialog = null;
+    private EditText username,userpassword;
+    private JSONArray userinfo;
     private int userlogin_status=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         userpassword = (EditText) findViewById(R.id.userpassword);
         Button sign_in = (Button) findViewById(R.id.sign_in_button);
         Button login = (Button) findViewById(R.id.login_button);
+
         sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -150,7 +153,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-    public void pop_out_error()
+    private void pop_out_error()
     {
 
         String status_title = null,status_message=null;
@@ -179,17 +182,30 @@ public class LoginActivity extends AppCompatActivity {
                 })
                 .show();
     }
-    public void sign_up_page()
+    private void sign_up_page()
     {
         Intent sign_up = new Intent(LoginActivity.this,sign.class);
         startActivity(sign_up);
     }
-    public void MainAct()
+    private void MainAct()
     {
+        int year=1900,month=1,day=1;
         Intent main = new Intent(LoginActivity.this,MainActivity.class);
+        SharedPreferences user_status = getSharedPreferences("username",0);
+
+        Calendar calendar = Calendar.getInstance();
+        year = calendar.get(Calendar.YEAR) ;
+        month = calendar.get(Calendar.MONTH) ;
+        day = calendar.get(Calendar.DAY_OF_MONTH);
+        user_status.edit()
+                .putString("username",username.getText().toString())
+                .putInt("year",year)
+                .putInt("month",month)
+                .putInt("day",day)
+                .commit();
         startActivity(main);
     }
-    public int login_auth()
+    private int login_auth()
     {
 
         EditText username = (EditText) findViewById(R.id.username);
