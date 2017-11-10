@@ -17,8 +17,7 @@ public class DataBase_Helper extends SQLiteOpenHelper {
     private static final String TableName = "User_info";  //表格名稱3
     private static final String Ticket_info = "Ticket_info";
     private static final String Store_info = "Store_info";
-    private static final String email = "email";
-    private static final String username = "username";
+
 
 
     public DataBase_Helper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -31,7 +30,6 @@ public class DataBase_Helper extends SQLiteOpenHelper {
 
         final String Userconfig = "CREATE TABLE IF NOT EXISTS " + TableName + "( " +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "_Username VARCHAR(50), " +
                 "_Preference_id INTEGER," +
                 "_Canteen_id INTEGER," +
                 "_Data_type INTEGER"+
@@ -45,10 +43,9 @@ public class DataBase_Helper extends SQLiteOpenHelper {
                 ");";
         final String Store = "CREATE TABLE IF NOT EXISTS " + Store_info + "( " +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "_Username VARCHAR(50), " +
-                "_Preference_id INTEGER," +
-                "_Canteen_id INTEGER," +
-                "_Data_type INTEGER"+
+                "_Store_name VARCHAR(50), " +
+                "_Address VARCHAR(100)," +
+                "_Price_level INTEGER," +
                 ");";
         db.execSQL(Userconfig);
         db.execSQL(Ticket);
